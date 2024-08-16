@@ -14,10 +14,13 @@
 // $('.game-space').on('click', () => {
 //     $('.game-space').text($('b').text())
 // })
-
+//After getting the end of game alert working, I added a section to this to hide it when clearing the board.
 $('button').on('click', () => {
     $('.game-space').text('')
+    $('.alert-success').text('')
+    $('.alert-success').css('visibility', 'hidden')
 })
+
 
 //I could not work out how to select only the clicked element in a class.
 //I added ids to all of my game spaces, which seems incredibly inefficient but I couldn't see another way.
@@ -28,5 +31,33 @@ const drawSymbol = (clickedSpace) => clickedSpace.text($('b').text())
 //When I attempted it, it didn't work, maybe because my game board is an id, maybe because my spaces are in rows.
 //I'll be working on a fix later.
 $('#top-left').on('click', () => {
-    drawSymbol($('#top-left'))
+    if ($('top-left').text == '') {
+        drawSymbol($('#top-left'))
+    }
+})
+
+//I think this switch player function using a ternary operator will work, however I have to test it to find out.
+//First attempt: It only works if the text is X, and won't move on to the second part of the statement even if the text is O.
+//Second attempt: Even moving the function into the text parentheses as I saw on a forum post didn't make this work.
+//Final function: However, moving the initial declaration into separate parentheses did, and now it works!
+const switchPlayer = () => ($('b').text() == 'X') ? $('b').text('O') : $('b').text('X')
+//Testing the switchPlayer function by clicking the header:
+$('h3').on('click', () => {
+    switchPlayer()
+})
+
+//When checking for a win, I can't just check if all elements in a class have an equal value, as the empty spaces would all be equal.
+//I temporarily set some values on the board in the HTML for testing purposes.
+//Unfortunately, neither classes nor ids seem to work for selecting and checking the text values. Maybe I should be using val instead?
+const checkForEndGame = () => {
+    if ($('#top-middle').text() == $('b').text() && $('#center-middle').text() == $('b').text() && $('#bottom-middle').text() == $('b').text()) {
+        $('.alert-success').text(`${$('b').text()} is the winner!`)
+        $('.alert-success').css('visibility', 'visible')
+    }
+}
+//When I put the internal part of the if loop in checkForEndGame into this click event, it works.
+//So there's an issue with how I'm selecting things, again.
+$('h1').on('click', () => {
+    $('.alert-success').text(`${$('b').text()} is the winner!`)
+    $('.alert-success').css('visibility', 'visible')
 })

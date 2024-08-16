@@ -38,6 +38,10 @@ h3 {
     border-right: 5px solid aliceblue;
 }
 
+.alert-success {
+    visibility: hidden;
+}
+
 /*It took a while to get this media query working, with the max-width = not working. When I changed it to width <=
 it worked perfectly.*/
 @media only screen and (width <= 1000px) {
