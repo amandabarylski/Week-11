@@ -10,30 +10,32 @@
 <body>
 
     <h1 class="mx-auto">Tic-Tac-Toe</h1>
+<!--I put the current player's symbol in a strong tag to make it easier to select with the DOM.-->
     <h3 class="mx-auto">Currently Playing: <b>X</b></h3>
     <br>
-
+<!--I initially tried using a table for the game board. That turned out to be too hard to keep the spaces square,
+so I changed it to nested divs using rows.-->
     <div id="game-board" class="container mx-auto">
         <div class="row justify-content-center">
-            <div class="game-space top left left-diagonal"></div>
-            <div class="game-space top middle"></div>
-            <div class="game-space top right right-diagonal"></div>
+            <div id="top-left" class="game-space top left left-diagonal"></div>
+            <div id="top-middle" class="game-space top middle"></div>
+            <div id="top-right" class="game-space top right right-diagonal"></div>
         </div>
         <div class="row justify-content-center">
-            <div class="game-space center left"></div>
-            <div class="game-space center middle left-diagonal right-diagonal"></div>
-            <div class="game-space center right"></div>
+            <div id="center-left" class="game-space center left"></div>
+            <div id="center-middle" class="game-space center middle left-diagonal right-diagonal"></div>
+            <div id="center-right" class="game-space center right"></div>
         </div>
         <div class="row justify-content-center">
-            <div class="game-space bottom left right-diagonal"></div>
-            <div class="game-space bottom middle"></div>
-            <div class="game-space bottom right left-diagonal"></div>
+            <div id="bottom-left" class="game-space bottom left right-diagonal"></div>
+            <div id="bottom-middle" class="game-space bottom middle"></div>
+            <div id="bottom-right" class="game-space bottom right left-diagonal"></div>
         </div>
     </div>
-    
-    <br>
-    <br>
 
+    <br>
+    <br>
+    
     <div class="text-center"><button type="button" class="btn btn-danger btn-sm">Clear Board</button></div>
 
 
