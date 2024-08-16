@@ -1,0 +1,68 @@
+body {
+    background-color: darkslategray;
+}
+
+h1 {
+    color: aliceblue;
+    text-align: center;
+    text-decoration: underline;
+}
+
+h3 {
+    color: aliceblue;
+    text-align: center;
+}
+
+.game-space {
+    height: 25vh;
+    width: 25vh;
+    font-size: 20vh;
+    text-align: center;
+    line-height: 20vh;
+    color: aliceblue;
+}
+
+.top {
+    border-bottom: 5px solid aliceblue;
+}
+
+.center {
+    border-bottom: 5px solid aliceblue;
+}
+
+.left {
+    border-right: 5px solid aliceblue;
+}
+
+.middle {
+    border-right: 5px solid aliceblue;
+}
+
+/*It took a while to get this media query working, with the max-width = not working. When I changed it to width <=
+it worked perfectly.*/
+@media only screen and (width <= 1000px) {
+
+    .game-space {
+        height: 20vw;
+        width: 20vw;
+        font-size: 15vw;
+        line-height: 20vw;
+        display: inline;
+        flex-wrap: nowrap;
+    }
+    .top {
+        border-bottom: 3px solid aliceblue;
+    }
+    
+    .center {
+        border-bottom: 3px solid aliceblue;
+    }
+    
+    .left {
+        border-right: 3px solid aliceblue;
+    }
+    
+    .middle {
+        border-right: 3px solid aliceblue;
+    }
+}

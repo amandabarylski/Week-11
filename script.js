@@ -7,3 +7,14 @@
         A button should be available to clear the grid and restart the game.
         When a player has won, or the board is full and the game results in a draw, a Bootstrap alert 
         or similar Bootstrap component should appear across the screen announcing the winner.*/
+
+
+//I wasn't able to select the game spaces by class and only alter the contents of the one clicked.
+//However, that gave me the idea for the clear function.
+// $('.game-space').on('click', () => {
+//     $('.game-space').text($('b').text())
+// })
+
+$('button').on('click', () => {
+    $('.game-space').text('')
+})

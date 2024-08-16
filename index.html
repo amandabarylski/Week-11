@@ -4,8 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <h1 class="mx-auto">Tic-Tac-Toe</h1>
+    <h3 class="mx-auto">Currently Playing: <b>X</b></h3>
+    <br>
+
+    <div id="game-board" class="container mx-auto">
+        <div class="row justify-content-center">
+            <div class="game-space top left left-diagonal"></div>
+            <div class="game-space top middle"></div>
+            <div class="game-space top right right-diagonal"></div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="game-space center left"></div>
+            <div class="game-space center middle left-diagonal right-diagonal"></div>
+            <div class="game-space center right"></div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="game-space bottom left right-diagonal"></div>
+            <div class="game-space bottom middle"></div>
+            <div class="game-space bottom right left-diagonal"></div>
+        </div>
+    </div>
     
+    <br>
+    <br>
+
+    <div class="text-center"><button type="button" class="btn btn-danger btn-sm">Clear Board</button></div>
+
+
+
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
